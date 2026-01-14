@@ -1,0 +1,12 @@
+{
+  "httpMethod": "GET",
+  "resource": "/leads",
+  "path": "/leads",
+  "headers": {},
+  "pathParameters": null,
+  "queryStringParameters": {
+    "status": "pending"
+  },
+  "body": null,
+  "isBase64Encoded": false
+}

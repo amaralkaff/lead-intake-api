@@ -1,0 +1,14 @@
+{
+  "httpMethod": "PATCH",
+  "resource": "/leads/{id}",
+  "path": "/leads/550e8400-e29b-41d4-a716-446655440000",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "pathParameters": {
+    "id": "550e8400-e29b-41d4-a716-446655440000"
+  },
+  "queryStringParameters": null,
+  "body": "{\"status\":\"contacted\"}",
+  "isBase64Encoded": false
+}

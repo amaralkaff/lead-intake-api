@@ -1,0 +1,12 @@
+{
+  "httpMethod": "POST",
+  "resource": "/leads",
+  "path": "/leads",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"nama\":\"John Doe\",\"kontak\":\"+62812345678\",\"caseType\":\"consultation\",\"description\":\"Need legal advice for business setup\",\"source\":\"website\"}",
+  "pathParameters": null,
+  "queryStringParameters": null,
+  "isBase64Encoded": false
+}

@@ -1,0 +1,37 @@
+{
+  "name": "lead-intake-api",
+  "version": "0.1.0",
+  "bin": {
+    "lead-intake-api": "bin/lead-intake-api.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy",
+    "destroy": "cdk destroy",
+    "local:api": "cdk synth --no-staging && sam local start-api -t cdk.out/LeadIntakeApiStack.template.json --env-vars env.json --warm-containers EAGER",
+    "local:invoke:create": "cdk synth --no-staging && sam local invoke -t cdk.out/LeadIntakeApiStack.template.json -e tests/events/create-lead-event.json --env-vars env.json"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.159",
+    "@types/jest": "^30",
+    "@types/node": "^24.10.1",
+    "@types/uuid": "^10.0.0",
+    "aws-cdk": "2.1100.3",
+    "esbuild": "^0.27.2",
+    "jest": "^30",
+    "ts-jest": "^29",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.9.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.968.0",
+    "@aws-sdk/util-dynamodb": "^3.968.0",
+    "aws-cdk-lib": "^2.232.2",
+    "constructs": "^10.0.0",
+    "uuid": "^13.0.0"
+  }
+}
