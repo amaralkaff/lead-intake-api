@@ -19,3 +19,6 @@ env.json
 # OS
 .DS_Store
 Thumbs.db
+
+# api-url
+api-url.md

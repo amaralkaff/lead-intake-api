@@ -35,24 +35,26 @@ npm run deploy
 npm run destroy
 ```
 
-## API Usage
+## API Usage (PowerShell)
 
-```bash
+```powershell
 # Create lead
-curl -X POST https://YOUR_API_URL/v1/leads \
-  -H "Content-Type: application/json" \
-  -d '{"nama":"John","kontak":"+62812345678","caseType":"consultation","description":"Need advice","source":"website"}'
+curl -Method Post "https://YOUR_API_URL/v1/leads" `
+  -Headers @{ "Content-Type" = "application/json" } `
+  -Body '{"nama":"John","kontak":"+62812345678","caseType":"consultation","description":"Need advice","source":"website"}'
 
 # List by status
-curl "https://YOUR_API_URL/v1/leads?status=pending"
+curl -Method Get "https://YOUR_API_URL/v1/leads?status=pending" `
+  -Headers @{ "Content-Type" = "application/json" }
 
 # Get by ID
-curl "https://YOUR_API_URL/v1/leads/{leadId}"
+curl -Method Get "https://YOUR_API_URL/v1/leads/{leadId}" `
+  -Headers @{ "Content-Type" = "application/json" }
 
-# Update status
-curl -X PATCH "https://YOUR_API_URL/v1/leads/{leadId}" \
-  -H "Content-Type: application/json" \
-  -d '{"status":"contacted"}'
+# Update status (allowed: qualified, rejected)
+curl -Method Patch "https://YOUR_API_URL/v1/leads/{leadId}" `
+  -Headers @{ "Content-Type" = "application/json" } `
+  -Body '{"status":"qualified"}'
 ```
 
 ## Project Structure
